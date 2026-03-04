@@ -3,190 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agave Tracker — 隱私政策 Privacy Policy</title>
+  <title>Agave Tracker — 私隱政策 / Privacy Policy</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f9fafb;
-      color: #1a1a1a;
-      line-height: 1.7;
+    :root {
+      --bg: #0e1a13;
+      --surface: #1a2b1f;
+      --border: #2a4030;
+      --primary: #4caf82;
+      --text: #e8f0eb;
+      --muted: #8aab96;
+      --danger: #e57373;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 0 0 60px;
+    }
+
     header {
-      background: #2d7a3a;
-      color: white;
-      padding: 48px 24px 36px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px 22px;
       text-align: center;
     }
+
     header h1 {
-      font-size: 2rem;
+      font-size: 24px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      color: var(--primary);
+      letter-spacing: 0.5px;
     }
-    header p {
-      margin-top: 8px;
-      font-size: 1rem;
-      opacity: 0.85;
+
+    header p.subtitle {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
     }
+
+    .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .lang-toggle button {
+      background: var(--border);
+      border: none;
+      color: var(--muted);
+      padding: 6px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-toggle button.active {
+      background: var(--primary);
+      color: #0e1a13;
+      font-weight: 600;
+    }
+
     .container {
       max-width: 720px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 32px 24px 0;
     }
-    .lang-toggle {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 32px;
+
+    .badge {
+      display: inline-block;
+      background: #1e3a28;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-size: 13px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-bottom: 28px;
     }
-    .lang-toggle a {
-      padding: 6px 16px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      background: #e8f5e9;
-      color: #2d7a3a;
-      border: 1.5px solid #2d7a3a;
-    }
-    section {
-      background: white;
-      border-radius: 12px;
-      padding: 28px 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-    section h2 {
-      font-size: 1.1rem;
+
+    h2 {
+      font-size: 17px;
       font-weight: 700;
-      color: #2d7a3a;
-      margin-bottom: 12px;
-    }
-    section p {
-      font-size: 0.97rem;
-      color: #333;
+      color: var(--primary);
+      margin-top: 36px;
       margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
     }
-    section p:last-child { margin-bottom: 0; }
-    .highlight-box {
-      background: #e8f5e9;
-      border-left: 4px solid #2d7a3a;
-      border-radius: 0 8px 8px 0;
-      padding: 16px 20px;
-      margin-bottom: 20px;
+
+    p { margin-bottom: 12px; color: var(--text); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px;
+      font-size: 14px;
     }
-    .highlight-box p {
-      font-size: 1rem;
+
+    th {
+      background: var(--surface);
+      color: var(--primary);
+      text-align: left;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
       font-weight: 600;
-      color: #1a4d22;
-      margin: 0;
     }
-    .divider {
-      border: none;
-      border-top: 2px dashed #e0e0e0;
-      margin: 40px 0;
+
+    td {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
     }
+
+    tr:nth-child(even) td { background: #141f18; }
+
+    .highlight {
+      background: #1e3a28;
+      border-left: 3px solid var(--primary);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .danger-note {
+      background: #2a1515;
+      border-left: 3px solid var(--danger);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #f4b8b8;
+    }
+
     footer {
       text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
-      color: #888;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
     }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Language sections */
+    .lang-zh, .lang-en { display: none; }
+    .lang-zh.visible, .lang-en.visible { display: block; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🌿 Agave Tracker</h1>
-  <p>隱私政策 · Privacy Policy</p>
+  <h1>🌵 Agave Tracker</h1>
+  <p class="subtitle">私隱政策 / Privacy Policy</p>
+  <div class="lang-toggle">
+    <button class="active" onclick="switchLang('zh')">繁體中文</button>
+    <button onclick="switchLang('en')">English</button>
+  </div>
 </header>
 
-<div class="container">
+<!-- ==================== CHINESE ==================== -->
+<div class="lang-zh visible">
+  <div class="container">
 
-  <!-- 中文版 -->
-  <div id="zh">
-    <p style="font-size:0.85rem;color:#888;margin-bottom:24px;">最後更新：2026年2月24日</p>
+    <p style="margin-top:20px; color: var(--muted); font-size:13px;">最後更新：2026年3月4日</p>
 
-    <div class="highlight-box">
-      <p>✅ Agave Tracker 不會收集、傳輸或分享你的任何個人資料。所有資料均儲存在你的裝置本機。</p>
+    <div class="badge">📋 本政策說明 Agave Tracker 如何處理你的個人資料</div>
+
+    <h2>概覽</h2>
+    <p>Agave Tracker（「本應用程式」）是一款龍舌蘭品種管理工具，提供本機記錄、iCloud 備份及社群圖鑑功能。本政策說明我們如何收集、使用及保護你的資料。</p>
+
+    <h2>我們收集哪些資料？</h2>
+    <table>
+      <tr>
+        <th>資料類型</th>
+        <th>用途</th>
+        <th>儲存位置</th>
+      </tr>
+      <tr>
+        <td>Apple ID 電郵地址</td>
+        <td>帳號識別及登入驗證</td>
+        <td>我們的伺服器（加密）</td>
+      </tr>
+      <tr>
+        <td>顯示名稱（用戶自訂）</td>
+        <td>圖鑑社群功能顯示</td>
+        <td>我們的伺服器</td>
+      </tr>
+      <tr>
+        <td>品種名稱、照片、護理記錄</td>
+        <td>個人收藏管理</td>
+        <td>裝置本機 + iCloud（選擇性備份）</td>
+      </tr>
+      <tr>
+        <td>分享至圖鑑的照片及說明</td>
+        <td>社群圖鑑展示</td>
+        <td>我們的伺服器</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      💡 本機資料（品種記錄、照片、護理記錄）預設只儲存在你的裝置上。iCloud 備份功能需要登入帳號並由你主動開啟，備份資料透過 Apple iCloud 加密傳輸及儲存。
     </div>
 
-    <section>
-      <h2>我們收集哪些資料？</h2>
-      <p>Agave Tracker 不會收集任何個人資料。應用程式所有的資料（包括品種名稱、照片、護理記錄等）均完全儲存在你的 iPhone 本機，不會上傳至任何伺服器或第三方服務。</p>
-    </section>
+    <h2>Sign in with Apple</h2>
+    <p>本應用程式使用 <strong>Sign in with Apple</strong> 作為唯一登入方式。登入時，Apple 會提供你的電郵地址（或 Apple 生成的匿名電郵）用於帳號識別。我們不會儲存你的 Apple ID 密碼或任何敏感驗證資訊。</p>
+    <p>你可以在登入時選擇向我們隱藏真實電郵地址，Apple 會提供一個匿名轉發電郵，功能不受影響。</p>
 
-    <section>
-      <h2>照片存取權限</h2>
-      <p>應用程式需要存取你的相機和相片庫，以便你為龍舌蘭品種拍攝或選取照片。這些照片僅用於在應用程式內顯示，不會被傳送至任何外部伺服器。</p>
-    </section>
+    <h2>iCloud 備份</h2>
+    <p>登入帳號後，你可以選擇開啟 iCloud 備份功能，將品種記錄、照片及護理記錄備份至 Apple iCloud。此功能：</p>
+    <p>• 需要你主動開啟，預設為關閉狀態<br>
+    • 資料透過 Apple iCloud 加密傳輸及儲存，受 Apple 的私隱政策保護<br>
+    • 可隨時在應用程式設定中關閉或刪除雲端備份</p>
 
-    <section>
-      <h2>資料儲存</h2>
-      <p>所有資料（品種資訊、照片、護理記錄）均使用 iOS 的本機儲存功能（AsyncStorage）儲存在你的裝置上。刪除應用程式將同時刪除所有相關資料。</p>
-    </section>
+    <h2>社群圖鑑功能</h2>
+    <p>你可以選擇將品種照片分享至公開圖鑑，供其他用戶瀏覽及留言。分享的內容（照片、品種名稱、說明）將儲存在我們的伺服器，並公開顯示你的顯示名稱。</p>
+    <p>你可以隨時從圖鑑中移除已分享的內容。</p>
 
-    <section>
-      <h2>第三方服務</h2>
-      <p>Agave Tracker 不使用任何第三方分析工具、廣告網絡或資料收集服務。</p>
-    </section>
+    <h2>相機及相片庫存取</h2>
+    <p>本應用程式需要存取你的相機及相片庫，以便你為龍舌蘭品種拍攝或選取照片。這些照片僅用於應用程式內顯示及你選擇的備份功能，不會在未經你同意的情況下上傳至任何伺服器。</p>
 
-    <section>
-      <h2>兒童隱私</h2>
-      <p>本應用程式適合所有年齡層使用，不會收集任何用戶的個人資料，包括兒童。</p>
-    </section>
-
-    <section>
-      <h2>聯絡我們</h2>
-      <p>如對本隱私政策有任何疑問，歡迎透過 App Store 的「開發者支援」功能聯絡我們。</p>
-    </section>
-  </div>
-
-  <hr class="divider" />
-
-  <!-- English Version -->
-  <div id="en">
-    <p style="font-size:0.85rem;color:#888;margin-bottom:24px;">Last Updated: February 24, 2026</p>
-
-    <div class="highlight-box">
-      <p>✅ Agave Tracker does not collect, transmit, or share any personal data. All data is stored locally on your device.</p>
+    <h2>資料保留及刪除</h2>
+    <p>你可以隨時在應用程式的「帳號設定」頁面刪除你的帳號。刪除帳號將永久移除我們伺服器上的所有相關資料，包括帳號資訊、雲端備份及圖鑑分享內容。</p>
+    <div class="danger-note">
+      ⚠️ 刪除帳號操作無法逆轉。本機資料不受影響，但雲端備份將被永久刪除。
     </div>
 
-    <section>
-      <h2>What Data Do We Collect?</h2>
-      <p>Agave Tracker does not collect any personal data. All information within the app — including variety names, photos, and care records — is stored entirely on your iPhone and is never uploaded to any server or third-party service.</p>
-    </section>
+    <h2>第三方服務</h2>
+    <p>本應用程式使用以下第三方服務：</p>
+    <table>
+      <tr>
+        <th>服務</th>
+        <th>用途</th>
+        <th>私隱政策</th>
+      </tr>
+      <tr>
+        <td>Apple Sign in with Apple</td>
+        <td>帳號驗證</td>
+        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+      </tr>
+      <tr>
+        <td>Apple iCloud</td>
+        <td>資料備份（選擇性）</td>
+        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+      </tr>
+    </table>
+    <p>本應用程式不使用任何第三方廣告網絡或分析追蹤工具。</p>
 
-    <section>
-      <h2>Photo Access</h2>
-      <p>The app requests access to your camera and photo library so you can take or select photos for your agave varieties. These photos are only used within the app and are never transmitted to any external server.</p>
-    </section>
+    <h2>兒童私隱</h2>
+    <p>本應用程式適合所有年齡層使用。我們不會主動向 13 歲以下兒童收集個人資料。如發現有兒童在未經家長同意的情況下提供個人資料，請聯絡我們，我們將立即刪除相關資料。</p>
 
-    <section>
-      <h2>Data Storage</h2>
-      <p>All data (variety information, photos, care records) is stored locally on your device using iOS local storage (AsyncStorage). Deleting the app will also delete all associated data.</p>
-    </section>
+    <h2>聯絡我們</h2>
+    <p>如對本私隱政策有任何疑問，歡迎透過 App Store 的「開發者支援」功能聯絡我們。</p>
 
-    <section>
-      <h2>Third-Party Services</h2>
-      <p>Agave Tracker does not use any third-party analytics tools, advertising networks, or data collection services.</p>
-    </section>
+    <footer>
+      © 2026 Agave Tracker · <a href="https://boli-png.github.io/policy">私隱政策</a>
+    </footer>
 
-    <section>
-      <h2>Children's Privacy</h2>
-      <p>This app is suitable for all ages and does not collect personal data from any user, including children.</p>
-    </section>
-
-    <section>
-      <h2>Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please contact us through the "Developer Support" option on the App Store.</p>
-    </section>
   </div>
-
 </div>
 
-<footer>
-  <p>© 2026 Agave Tracker. All rights reserved.</p>
-</footer>
+<!-- ==================== ENGLISH ==================== -->
+<div class="lang-en">
+  <div class="container">
+
+    <p style="margin-top:20px; color: var(--muted); font-size:13px;">Last Updated: March 4, 2026</p>
+
+    <div class="badge">📋 This policy explains how Agave Tracker handles your personal data</div>
+
+    <h2>Overview</h2>
+    <p>Agave Tracker ("the App") is an agave variety management tool offering local record-keeping, iCloud backup, and a community catalogue. This policy explains how we collect, use, and protect your data.</p>
+
+    <h2>What Data Do We Collect?</h2>
+    <table>
+      <tr>
+        <th>Data Type</th>
+        <th>Purpose</th>
+        <th>Storage Location</th>
+      </tr>
+      <tr>
+        <td>Apple ID email address</td>
+        <td>Account identification and authentication</td>
+        <td>Our servers (encrypted)</td>
+      </tr>
+      <tr>
+        <td>Display name (user-defined)</td>
+        <td>Community catalogue display</td>
+        <td>Our servers</td>
+      </tr>
+      <tr>
+        <td>Variety names, photos, care records</td>
+        <td>Personal collection management</td>
+        <td>Device local storage + iCloud (optional backup)</td>
+      </tr>
+      <tr>
+        <td>Photos and descriptions shared to catalogue</td>
+        <td>Community catalogue display</td>
+        <td>Our servers</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      💡 Local data (variety records, photos, care records) is stored only on your device by default. iCloud backup requires account login and must be enabled by you. Backup data is encrypted in transit and at rest via Apple iCloud.
+    </div>
+
+    <h2>Sign in with Apple</h2>
+    <p>The App uses <strong>Sign in with Apple</strong> as its sole authentication method. Upon sign-in, Apple provides your email address (or an Apple-generated anonymous email) for account identification. We do not store your Apple ID password or any sensitive authentication credentials.</p>
+    <p>You may choose to hide your real email address during sign-in. Apple will provide an anonymous relay email, and all app features will remain fully functional.</p>
+
+    <h2>iCloud Backup</h2>
+    <p>After signing in, you may optionally enable iCloud backup to back up your variety records, photos, and care records to Apple iCloud. This feature:</p>
+    <p>• Must be explicitly enabled by you; it is off by default<br>
+    • Data is encrypted in transit and at rest via Apple iCloud, governed by Apple's Privacy Policy<br>
+    • Can be disabled or deleted at any time from the app settings</p>
+
+    <h2>Community Catalogue</h2>
+    <p>You may choose to share variety photos to the public catalogue for other users to browse and comment on. Shared content (photos, variety names, descriptions) will be stored on our servers and displayed alongside your display name.</p>
+    <p>You may remove shared content from the catalogue at any time.</p>
+
+    <h2>Camera and Photo Library Access</h2>
+    <p>The App requires access to your camera and photo library so you can take or select photos for your agave varieties. These photos are used only within the app and for your chosen backup features, and will not be uploaded to any server without your consent.</p>
+
+    <h2>Data Retention and Deletion</h2>
+    <p>You may delete your account at any time via the "Account Settings" page within the app. Deleting your account will permanently remove all associated data from our servers, including account information, cloud backups, and catalogue submissions.</p>
+    <div class="danger-note">
+      ⚠️ Account deletion is irreversible. Local device data is not affected, but all cloud backups will be permanently deleted.
+    </div>
+
+    <h2>Third-Party Services</h2>
+    <p>The App uses the following third-party services:</p>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Privacy Policy</th>
+      </tr>
+      <tr>
+        <td>Apple Sign in with Apple</td>
+        <td>Account authentication</td>
+        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+      </tr>
+      <tr>
+        <td>Apple iCloud</td>
+        <td>Data backup (optional)</td>
+        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+      </tr>
+    </table>
+    <p>The App does not use any third-party advertising networks or analytics tracking tools.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>The App is suitable for all ages. We do not knowingly collect personal data from children under 13. If we learn that a child under 13 has provided personal data without parental consent, we will promptly delete that information. Please contact us if you believe this has occurred.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us through the "Developer Support" option on the App Store.</p>
+
+    <footer>
+      © 2026 Agave Tracker · <a href="https://boli-png.github.io/policy">Privacy Policy</a>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-zh, .lang-en').forEach(el => el.classList.remove('visible'));
+    document.querySelector('.lang-' + lang).classList.add('visible');
+    document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
